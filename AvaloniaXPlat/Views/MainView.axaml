@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaXPlat.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaXPlat.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+	<TabControl  TabStripPlacement="Bottom"  HorizontalContentAlignment="Stretch">
+		<TabItem FontSize="20" Header="Новости">
+
+
+		</TabItem>
+		<TabItem FontSize="20" Header="События">
+			<Grid RowDefinitions="auto, *" Background="Orange">
+				<Rectangle Fill="Green" Height="30" Grid.Row="0"/>
+				<Rectangle Fill="Blue" Height="30" Grid.Row="1"/>
+				<Grid ColumnDefinitions="*, Auto">
+					<TextBox Grid.Column="0"/>
+					<Button Grid.Column="1" Content="Search"/>
+				</Grid>
+				<ListBox Grid.Row="1"/>
+			</Grid>
+		</TabItem>
+		<TabItem FontSize="20" Header="Профиль">
+			
+			<StackPanel HorizontalAlignment="Center">
+				<Border Height="130" Width="130" Background="Gray">
+					<Image Height="120"/>
+				</Border>
+				<Label  Content="Беломытцев Дмитрий Сергеввич"/>
+				<Label  Content="d3027212"/>
+				<Button Content="Уточнить интересы"/>
+				<Button Content="Изенить фото и имя"/>
+			</StackPanel>
+		</TabItem>
+	</TabControl>
+	
+</UserControl>
